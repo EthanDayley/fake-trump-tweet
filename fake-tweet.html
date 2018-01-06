@@ -1,0 +1,129 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<dom-module id="fake-tweet">
+    <template>
+        <style>
+            :root {
+                --grayed-out-text-color: #555;
+                --grayed-out-font-weight: 400;
+                padding: 5px;
+                max-width: 600px;
+            }
+            :host {
+                display: inline-block;
+                background-color: white;
+                cursor: pointer;
+            }
+            :host(:hover) {
+                background-color: #f2f2f5;
+            }
+            .centered-icon-helper {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .bottom-bar-icon {
+                width:  18px;
+                height: 18px;
+                vertical-align: middle;
+                margin-left: 15px;
+            }
+            .bottom-bar-text {
+                margin-left: 8px;
+                color: var(--grayed-out-text-color);
+                font-weight: 600;
+                font-size: 0.9em;
+            }
+            #outer-wrapper {
+                display: flex;
+            }
+            #top-bar {
+                margin-bottom: 5px;
+                text-align: left;
+            }
+            #trump-name-text {
+                font-weight: bold;
+                color: black;
+            }
+            #little-checkmark-icon {
+                width:  11;
+                height: 11;
+            }
+            #at-trump {
+                font-weight: var(--grayed-out-font-weight);
+                color: var(--grayed-out-text-color);
+            }
+            #top-bar-center-dot {
+                color: var(--grayed-out-text-color);
+            }
+            #date-container {
+                color: var(--grayed-out-text-color);
+                font-weight: var(--grayed-out-font-weight);
+            }
+            #trump-picture {
+                width:  50px;
+                height: 50px;
+                border-radius: 50%;
+                align-self: flex-start;
+                margin-right: 10px;
+                /*background: url("data:image/jpg;base64,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")
+                no-repeat
+                left center;*/
+            }
+            #main-content-wrapper {
+                margin-bottom: 10px;
+                text-align: left;
+            }
+            #reply-icon {
+                margin-left: 0;
+            }
+            #bottom-bar {
+                text-align: left;
+            }
+        </style>
+    <div id="outer-wrapper">
+        <img id="trump-picture" src="/elements/fake-tweet/resources/images/trump_picture.jpg" />
+        <!--span id="trump-picture"></span-->
+        <span id="right-section">
+            <div id="top-bar">
+                <span id="trump-name-text">Donald J. Trump</span>
+                <img id="little-checkmark-icon" src="/elements/fake-tweet/resources/images/little-checkmark-icon.svg" />
+                <span id="at-trump">@realDonaldTrump</span>
+                <span id="top-bar-center-dot">&centerdot;</span>
+                <span id="date-container">Dec 12</span>
+            </div>
+            <div id="main-content-wrapper">
+                <div id="tweet-text-wrapper">
+                    <slot></slot>
+                </div>
+            </div>
+            <div id="bottom-bar">
+                <span class="centered-icon-helper">
+                    <img class="bottom-bar-icon" id="reply-icon" src="/elements/fake-tweet/resources/images/speech-bubble.svg" />
+                </span>
+                <span class="bottom-bar-text" id="reply-text">31K</span>
+                <span class="centered-icon-helper">
+                    <img class="bottom-bar-icon" id="retweet-icon" src="/elements/fake-tweet/resources/images/retweet.svg" />
+                </span>
+                <span class="bottom-bar-text" id="retweet-text">6.3K</span>
+                <span id="centered-icon-help">
+                    <img class="bottom-bar-icon" id="like-icon" src="/elements/fake-tweet/resources/images/heart-icon.svg" />
+                </span>
+                <span class="bottom-bar-text" id="like-text">100K</span>
+            </div>
+        </span>
+    </div>
+    </template>
+    <script>
+        class FakeTweet extends Polymer.Element {
+            static get is() {
+                return "fake-tweet";
+            }
+            connectedCallback() {
+            }
+            constructor() {
+                super();
+                super.ready();
+            }
+        }
+        customElements.define(FakeTweet.is, FakeTweet);
+    </script>
+</dom-module>
