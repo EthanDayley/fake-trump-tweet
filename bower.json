@@ -1,0 +1,22 @@
+{
+  "name": "fake-trump-tweet",
+  "homepage": "https://github.com/EthanDayley/fake-trump-tweet",
+  "authors": [
+    "Ethan Dayley <eedayley@gmail.com>"
+  ],
+  "description": "A fake @RealDonaldTrump tweet element.",
+  "main": "fake-trump-tweet.html",
+  "keywords": [
+    "funny",
+    "tweet",
+    "fake"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
