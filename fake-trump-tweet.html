@@ -1,5 +1,5 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html" />
-<dom-module id="fake-tweet">
+<link rel="import" href="../polymer/polymer.html" />
+<dom-module id="fake-trump-tweet">
     <template>
         <style>
             :root {
@@ -12,6 +12,7 @@
                 display: inline-block;
                 background-color: white;
                 cursor: pointer;
+                font-family: sans-serif;
             }
             :host(:hover) {
                 background-color: #f2f2f5;
@@ -77,11 +78,11 @@
             }
         </style>
     <div id="outer-wrapper">
-        <img id="trump-picture" src="/elements/fake-tweet/resources/images/trump_picture.jpg" />
+        <img id="trump-picture" src="/elements/fake-trump-tweet/resources/images/trump_picture.jpg" />
         <span id="right-section">
             <div id="top-bar">
                 <span id="trump-name-text">Donald J. Trump</span>
-                <img id="little-checkmark-icon" src="/elements/fake-tweet/resources/images/little-checkmark-icon.svg" />
+                <img id="little-checkmark-icon" src="/elements/fake-trump-tweet/resources/images/little-checkmark-icon.svg" />
                 <span id="at-trump">@realDonaldTrump</span>
                 <span id="top-bar-center-dot">&centerdot;</span>
                 <span id="date-container">Dec 12</span>
@@ -93,15 +94,15 @@
             </div>
             <div id="bottom-bar">
                 <span class="centered-icon-helper">
-                    <img class="bottom-bar-icon" id="reply-icon" src="/elements/fake-tweet/resources/images/speech-bubble.svg" />
+                    <img class="bottom-bar-icon" id="reply-icon" src="/elements/fake-trump-tweet/resources/images/speech-bubble.svg" />
                 </span>
                 <span class="bottom-bar-text" id="reply-text">31K</span>
                 <span class="centered-icon-helper">
-                    <img class="bottom-bar-icon" id="retweet-icon" src="/elements/fake-tweet/resources/images/retweet.svg" />
+                    <img class="bottom-bar-icon" id="retweet-icon" src="/elements/fake-trump-tweet/resources/images/retweet.svg" />
                 </span>
                 <span class="bottom-bar-text" id="retweet-text">6.3K</span>
                 <span id="centered-icon-help">
-                    <img class="bottom-bar-icon" id="like-icon" src="/elements/fake-tweet/resources/images/heart-icon.svg" />
+                    <img class="bottom-bar-icon" id="like-icon" src="/elements/fake-trump-tweet/resources/images/heart-icon.svg" />
                 </span>
                 <span class="bottom-bar-text" id="like-text">100K</span>
             </div>
@@ -109,9 +110,9 @@
     </div>
     </template>
     <script>
-        class FakeTweet extends Polymer.Element {
+        class FakeTrumpTweet extends Polymer.Element {
             static get is() {
-                return "fake-tweet";
+                return "fake-trump-tweet";
             }
             connectedCallback() {
             }
@@ -120,6 +121,6 @@
                 super.ready();
             }
         }
-        customElements.define(FakeTweet.is, FakeTweet);
+        customElements.define(FakeTrumpTweet.is, FakeTrumpTweet);
     </script>
 </dom-module>
