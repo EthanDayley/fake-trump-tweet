@@ -22,6 +22,7 @@ Then simply place the tweet text inside of the element.
 <!--
 <custom-element-demo>
   <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="fake-trump-tweet.html">
   </template>
 </custom-element-demo>
