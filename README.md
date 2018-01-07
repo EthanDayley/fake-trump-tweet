@@ -19,10 +19,12 @@ Import with the html import syntax:
 <custom-element-demo>
   <template>
     <link rel="import" href="fake-trump-tweet.html">
-    <fake-trump-tweet>Make America Great Again!</fake-trump-tweet>
   </template>
 </custom-element-demo>
 -->
+```html
+    <fake-trump-tweet>Make America Great Again!</fake-trump-tweet>
+```
 
 ## Credits
 This project was developed solely by Ethan Dayley as part of his push to learn more about Polymer 2
