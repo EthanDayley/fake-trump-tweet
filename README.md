@@ -1,3 +1,5 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/EthanDayley/fake-trump-tweet)
+
 # Fake Trump Tweet
 This is a web component that models a fake Donald Trump tweet (@RealDonaldTrump)
 
