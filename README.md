@@ -22,6 +22,7 @@ Import with the html import syntax:
   </template>
 </custom-element-demo>
 -->
+## Demo
 ```html
     <fake-trump-tweet>Make America Great Again!</fake-trump-tweet>
 ```
