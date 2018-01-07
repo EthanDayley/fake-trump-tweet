@@ -14,6 +14,10 @@ Import with the html import syntax:
 ```html
 <link rel="import" href="/bower_components/fake-trump-tweet/fake-trump-tweet.html" />
 ```
+Then simply place the tweet text inside of the element.
+```html
+<fake-trump-tweet>This is the tweet text</fake-trump-tweet>
+```
 
 <!--
 <custom-element-demo>
