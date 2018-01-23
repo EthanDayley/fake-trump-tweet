@@ -394,7 +394,45 @@
             static get is() {
                 return "fake-trump-tweet";
             }
+            /**
+                This is a method to fetch a string of the 
+                form 100 or 3.2K or 4.1M for the number
+                of people who have interacted with the tweet
+                in some way.
+            */
+            getInteractionString() {
+                function toFixedRoundIfMod(n, places) {
+                    n = n.toFixed(1);
+                    if (n % 1 == 0) {
+                        return Math.round(n);
+                    }
+                    else {
+                        return Number(n).toFixed(places);
+                    }
+                }
+                let max = 5; //max number in millions
+                let n = Math.random() * max * 1000000;
+                n = toFixedRoundIfMod(n, 1);
+                if (n < 1000) {
+                    //plain number
+                    return Math.round(n).toString();
+                }
+                else if (n < 1000000) {
+                    //number shortened with "K" notation
+                    return toFixedRoundIfMod(Number(n/1000), 1).toString() + "K";
+                }
+                else {
+                    //number above 1 million, shortened with "M" notation
+                    return toFixedRoundIfMod(Number(n/1000000), 1).toString() + "M";
+                }
+            }
             connectedCallback() {
+                let reply = this.$["reply-text"];
+                let like = this.$["like-text"];
+                let retweet = this.$["retweet-text"];
+                reply.innerHTML = this.getInteractionString();
+                like.innerHTML = this.getInteractionString();
+                retweet.innerHTML = this.getInteractionString();
             }
             constructor() {
                 super();
